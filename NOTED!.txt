@@ -1,0 +1,5 @@
+Level CRUD
+1. Administrator	: Membuka semua fitur CRUD
+2. Admin Staff		: Fitur CRUD semua table DB kecuali user
+3. Direksi		: Hanya fitur READ dan Message
+4. Teknisi		: Fitur CRUD di table project dan maintenance request
