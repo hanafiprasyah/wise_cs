@@ -8,14 +8,18 @@ if (isset($_POST['btnEditClient'])) {
 
     date_default_timezone_set("Asia/Bangkok");
 
-    $id_client               = $_POST['id_client'];
-    $nama_client             = $_POST['nama_client'];
-    $alamat_customer         = $_POST['alamat_customer'];
+    $id_client                  = $_POST['id_client'];
+    $nama_client                = $_POST['nama_client'];
+    $alamat_customer            = $_POST['alamat_customer'];
+    $jenis_customer             = $_POST['jenis_customer'];
+    $status_customer            = $_POST['status_customer'];
 
     $conn->query("UPDATE `client` SET 
     `id_client`='" . $id_client . "',
     `nama_customer`='" . $nama_client . "', 
-    `alamat_customer`='" . $alamat_customer . "'
+    `alamat_customer`='" . $alamat_customer . "',
+    `jenis_customer`='" . $jenis_customer . "',
+    `status_customer`='" . $status_customer . "'
     WHERE id_client='" . $id_url . "';");
     header('location:../../pages/screen/client_detail.php?id=' . $id_url . '');
 }

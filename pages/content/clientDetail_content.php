@@ -27,11 +27,6 @@
     $sql = "SELECT * FROM `client` WHERE id_client='" . $id_url . "';";
     $resultID = mysqli_query($conn, $sql);
     $rowDataClient = mysqli_fetch_array($resultID);
-
-    $register_date  = $rowDataClient['customer_registered'];
-    $register_time  = $rowDataClient['customer_registered'];
-    $format_regisDate   = date("F d, Y", strtotime($register_date));
-    $format_regisTime   = date("H.i", strtotime($register_time));
     ?>
     <!-- Main content -->
     <section class="content">
@@ -46,12 +41,12 @@
                                     <div class="col-12 col-sm-4">
                                         <div class="info-box bg-light">
                                             <div class="info-box-content">
-                                                <span class="info-box-text text-center text-muted">Customer ID</span>
-                                                <span class="info-box-number text-center text-muted mb-0"><?php echo $rowDataClient['id_client']; ?></span>
+                                                <span class="info-box-text text-center text-muted">Customer Status</span>
+                                                <span class="info-box-number text-center text-muted mb-0"><i><?php echo $rowDataClient['status_customer']; ?></i></span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-2">
+                                    <div class="col-12 col-sm-4">
                                         <div class="info-box bg-light">
                                             <div class="info-box-content">
                                                 <span class="info-box-text text-center text-success">Project(s)</span>
@@ -59,11 +54,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-6">
+                                    <div class="col-12 col-sm-4">
                                         <div class="info-box bg-light">
                                             <div class="info-box-content">
-                                                <span class="info-box-text text-center text-info">Customer Registered</span>
-                                                <span class="info-box-number text-center text-muted mb-0"><?php echo $format_regisDate . ' / ' . $format_regisTime . ' WIB'; ?></span>
+                                                <span class="info-box-text text-center text-info">Managed by</span>
+                                                <span class="info-box-number text-center text-muted mb-0"><?php echo $rowDataClient['jenis_customer'] ?></span>
                                             </div>
                                         </div>
                                     </div>

@@ -57,6 +57,26 @@
                                                 <span style="color: BLUE;">Example : Jalan Jati Asih Raya Nomor 350, Jati Asih, Kota Bekasi</span>
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <label for="jenis_customer" class="col-sm-4 col-form-label">Managed by</label>
+                                            <div class="col-sm-6">
+                                                <select name="jenis_customer" id="jenis_customer" class="form-control select2bs4" style="width: 100%;" required>
+                                                    <option selected>Select Type</option>
+                                                    <option value="Government">Government</option>
+                                                    <option value="Private">Private</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="status_customer" class="col-sm-4 col-form-label">Customer Status</label>
+                                            <div class="col-sm-6">
+                                                <select name="status_customer" id="status_customer" class="form-control select2bs4" style="width: 100%;" required>
+                                                    <option selected>Select Status</option>
+                                                    <option value="Customer">Customer</option>
+                                                    <option value="Pre-Customer">Pre-Customer</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <br>
                                         <div class="form-group row">
                                             <div class="offset-sm-4 col-sm-4">

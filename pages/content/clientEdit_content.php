@@ -31,9 +31,11 @@
                                     <form class="form-horizontal" action="../../database/client/edit_client.php?id=<?php echo $id_url; ?>" method="POST">
                                         <div class="form-group row">
                                             <label for="id_client" class="col-sm-4 col-form-label">Customer ID</label>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-2">
                                                 <input type="text" class="form-control" id="id_client" name="id_client" placeholder="ID?" value="<?php echo $rowDataClient['id_client']; ?>" required>
-                                                <span class="info-box-text text-center text-danger">Warning! Please do not change this customer ID as much as possible!</span>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <span class="info-box-text text-center align-middle text-danger">Warning! Please do not change this customer ID as much as possible!</span>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -43,9 +45,31 @@
                                             </div>
                                         </div>
                                         <!--Material textarea-->
-                                        <div class="md-form">
-                                            <label for="alamat_customer">Customer Address</label>
-                                            <textarea id="alamat_customer" name="alamat_customer" placeholder="Where is your customer address?" class="md-textarea form-control" rows="3" required><?php echo $rowDataClient['alamat_customer']; ?></textarea>
+                                        <div class="form-group row">
+                                            <label for="alamat_customer" class="col-sm-4 col-form-label">Customer Address</label>
+                                            <div class="col-sm-6">
+                                                <textarea id="alamat_customer" class="form-control" name="alamat_customer" placeholder="Where is your customer address?" class="md-textarea form-control" rows="3" required><?php echo $rowDataClient['alamat_customer']; ?></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="jenis_customer" class="col-sm-4 col-form-label">Managed by</label>
+                                            <div class="col-sm-6">
+                                                <select name="jenis_customer" id="jenis_customer" class="form-control select2bs4" style="width: 100%;" required>
+                                                    <option selected>Select Type</option>
+                                                    <option value="Government">Government</option>
+                                                    <option value="Private">Private</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="status_customer" class="col-sm-4 col-form-label">Customer Status</label>
+                                            <div class="col-sm-6">
+                                                <select name="status_customer" id="status_customer" class="form-control select2bs4" style="width: 100%;" required>
+                                                    <option selected>Select Status</option>
+                                                    <option value="Customer">Customer</option>
+                                                    <option value="Pre-Customer">Pre-Customer</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <br>
                                         <div class="form-group row">
