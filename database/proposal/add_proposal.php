@@ -3,16 +3,19 @@ require_once '../configures/koneksi.php';
 if (isset($_POST['btnAddProposal'])) {
     date_default_timezone_set("Asia/Bangkok");
 
+    $entry_by   = $_GET['entry_by'];
+    $id_url     = mysqli_real_escape_string($conn, $entry_by);
+
     $year   = date("Y");
     $month  = date("m");
     $second = date("s");
     $millisecond = round(microtime(true) * 1000);
 
-    $proposal_ticket        = $_POST['id_proposal'];
-    $id_proposal            = '' . $year . '' . $month . '' . $proposal_ticket . '' . $second . '' . $millisecond;
+    // $proposal_ticket        = $_POST['id_proposal'];
+    $id_proposal            = '' . $year . '' . $month . '' . $id_url . '' . $second . '' . $millisecond;
 
     $proposal_title         = $_POST['proposal_title'];
-    $target_client          = $_POST['target_client'];
+    $id_client              = $_POST['id_client'];
     $submit_date            = $_POST['submit_date'];
     $proposal_status        = 'Just Sending';
 
@@ -20,24 +23,26 @@ if (isset($_POST['btnAddProposal'])) {
     $conn->query("INSERT INTO `proposal`(
         `id_proposal`, 
         `proposal_title`, 
-        `target_client`, 
+        `id_client`, 
         `submit_date`,
         `proposal_status`) VALUES (
             '" . $id_proposal . "',
             '" . $proposal_title . "',
-            '" . $target_client . "',
+            '" . $id_client . "',
             '" . $submit_date . "',
             '" . $proposal_status . "'
         );");
 
     $conn->query("INSERT INTO `activity_tracker`(
             `id_activity`,
-            `id_proposal`, 
+            `id_proposal`,
+            `id_client`, 
             `proposal_title`, 
             `proposal_submit`,
             `status`) VALUES (
                 '',
                 '" . $id_proposal . "',
+                '" . $id_client . "',
                 '" . $proposal_title . "',
                 '" . $submit_date . "',
                 'On Progress'

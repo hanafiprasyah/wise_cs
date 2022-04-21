@@ -58,7 +58,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="jenis_customer" class="col-sm-4 col-form-label">Managed by</label>
+                                            <label for="jenis_customer" class="col-sm-4 col-form-label">Managed by &nbsp;<span class="badge badge-danger">New</span></label>
                                             <div class="col-sm-6">
                                                 <select name="jenis_customer" id="jenis_customer" class="form-control select2bs4" style="width: 100%;" required>
                                                     <option selected>Select Type</option>
@@ -68,7 +68,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="status_customer" class="col-sm-4 col-form-label">Customer Status</label>
+                                            <label for="status_customer" class="col-sm-4 col-form-label">Customer Status &nbsp;<span class="badge badge-danger">New</span></label>
                                             <div class="col-sm-6">
                                                 <select name="status_customer" id="status_customer" class="form-control select2bs4" style="width: 100%;" required>
                                                     <option selected>Select Status</option>

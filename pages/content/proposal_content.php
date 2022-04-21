@@ -50,14 +50,14 @@
                                 <?php } ?>
                                 <div class="tab-content">
                                     <div class="active tab-pane" id="settings">
-                                        <form id="proposalForm" class="form-horizontal" action="../../database/proposal/add_proposal.php" method="POST">
-                                            <div class="form-group row">
+                                        <form id="proposalForm" class="form-horizontal" action="../../database/proposal/add_proposal.php?entry_by=<?php echo $row['username'] ?>" method="POST">
+                                            <!-- <div class="form-group row">
                                                 <label for="id_proposal" class="col-sm-4 col-form-label">Entry by</label>
                                                 <div class="col-sm-6">
                                                     <input type="text" class="form-control" id="id_proposal" name="id_proposal" placeholder="Fill with your SIMPLE NAME!" required>
                                                     <span style="color: BLUE;">Example : <a style="color: RED;">H</a>anafi (Using CAPITAL in the first row of your name)</span>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="form-group row">
                                                 <label for="proposal_title" class="col-sm-4 col-form-label">Proposal Title</label>
                                                 <div class="col-sm-6">
@@ -66,10 +66,18 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="target_client" class="col-sm-4 col-form-label">Pre-Customer</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control" id="target_client" name="target_client" placeholder="Who is your pre-customer?" required>
-                                                    <span style="color: BLUE;">Example : PT. WIBAWA SOLUSI ELEKTRIK</span>
+                                                <label for="id_client" class="col-sm-4 col-form-label">Pre-Customer</label>
+                                                <div class="col-sm-4">
+                                                    <select name="id_client" id="id_client" class="form-control select2bs4" required>
+                                                        <option value="">Select Pre-Customer</option>
+                                                        <?php
+                                                        $getIDClient = "SELECT id_client, nama_customer FROM `client` WHERE status_customer='Pre-Customer' ORDER BY nama_customer ASC;";
+                                                        $connectDataIdClient = mysqli_query($conn, $getIDClient);
+                                                        while ($rowIdClient = mysqli_fetch_array($connectDataIdClient)) {
+                                                        ?>
+                                                            <option value="<?php echo $rowIdClient['id_client']; ?>" <?php if ($rowIdClient['nama_customer'] == $rowIdClient['id_client']) echo 'selected="selected"'; ?>><?php echo $rowIdClient['nama_customer']; ?></option>
+                                                        <?php } ?>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -133,8 +141,9 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $sql = "SELECT *
-                                            FROM proposal
+                                        $sql = "SELECT A.*, B.* FROM proposal A
+                                            INNER JOIN client B
+                                            USING (id_client)
                                             WHERE MONTH(submit_date) = MONTH(CURRENT_DATE())
                                             AND YEAR(submit_date) = YEAR(CURRENT_DATE());";
                                         $connecting = mysqli_query($conn, $sql);
@@ -142,7 +151,7 @@
                                             while ($rowProposal = $connecting->fetch_assoc()) {
                                                 $id_proposal = $rowProposal['id_proposal'];
                                                 $title = $rowProposal['proposal_title'];
-                                                $target_client = $rowProposal['target_client'];
+                                                $nama_customer = $rowProposal['nama_customer'];
                                                 $submit = $rowProposal['submit_date'];
                                                 $status = $rowProposal['proposal_status'];
 
@@ -150,7 +159,7 @@
                                         ?>
                                                 <tr>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $title . '</a>'; ?></td>
-                                                    <td class="text-center align-middle"><?php echo '<a>' . $target_client . '</a>'; ?></td>
+                                                    <td class="text-center align-middle"><?php echo '<a>' . $nama_customer . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $submitDate . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $status . '</a>'; ?></td>
                                                 </tr>
@@ -199,14 +208,15 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $sql = "SELECT *
-                                                FROM proposal;";
+                                        $sql = "SELECT A.*, B.* FROM proposal A
+                                        INNER JOIN client B
+                                        USING (id_client)";
                                         $connecting = mysqli_query($conn, $sql);
                                         if ($connecting) {
                                             while ($rowProposal = $connecting->fetch_assoc()) {
                                                 $id_proposal = $rowProposal['id_proposal'];
                                                 $title = $rowProposal['proposal_title'];
-                                                $target_client = $rowProposal['target_client'];
+                                                $nama_customer = $rowProposal['nama_customer'];
                                                 $submit = $rowProposal['submit_date'];
                                                 $status = $rowProposal['proposal_status'];
 
@@ -214,7 +224,7 @@
                                         ?>
                                                 <tr>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $title . '</a>'; ?></td>
-                                                    <td class="text-center align-middle"><?php echo '<a>' . $target_client . '</a>'; ?></td>
+                                                    <td class="text-center align-middle"><?php echo '<a>' . $nama_customer . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $submitDate . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $status . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '
@@ -282,16 +292,17 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $sql = "SELECT *
-                            FROM proposal
-                            WHERE MONTH(submit_date) = MONTH(CURRENT_DATE())
-                            AND YEAR(submit_date) = YEAR(CURRENT_DATE());";
+                                        $sql = "SELECT A.*, B.* FROM proposal A
+                                        INNER JOIN client B
+                                        USING (id_client)
+                                        WHERE MONTH(submit_date) = MONTH(CURRENT_DATE())
+                                        AND YEAR(submit_date) = YEAR(CURRENT_DATE());";
                                         $connecting = mysqli_query($conn, $sql);
                                         if ($connecting) {
                                             while ($rowProposal = $connecting->fetch_assoc()) {
                                                 $id_proposal = $rowProposal['id_proposal'];
                                                 $title = $rowProposal['proposal_title'];
-                                                $target_client = $rowProposal['target_client'];
+                                                $nama_customer = $rowProposal['nama_customer'];
                                                 $submit = $rowProposal['submit_date'];
                                                 $status = $rowProposal['proposal_status'];
 
@@ -299,7 +310,7 @@
                                         ?>
                                                 <tr>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $title . '</a>'; ?></td>
-                                                    <td class="text-center align-middle"><?php echo '<a>' . $target_client . '</a>'; ?></td>
+                                                    <td class="text-center align-middle"><?php echo '<a>' . $nama_customer . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $submitDate . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $status . '</a>'; ?></td>
                                                 </tr>
@@ -345,14 +356,15 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $sql = "SELECT *
-                            FROM proposal;";
+                                        $sql = "SELECT A.*, B.* FROM proposal A
+                                        INNER JOIN client B
+                                        USING (id_client)";
                                         $connecting = mysqli_query($conn, $sql);
                                         if ($connecting) {
                                             while ($rowProposal = $connecting->fetch_assoc()) {
                                                 $id_proposal = $rowProposal['id_proposal'];
                                                 $title = $rowProposal['proposal_title'];
-                                                $target_client = $rowProposal['target_client'];
+                                                $nama_customer = $rowProposal['nama_customer'];
                                                 $submit = $rowProposal['submit_date'];
                                                 $status = $rowProposal['proposal_status'];
 
@@ -360,7 +372,7 @@
                                         ?>
                                                 <tr>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $title . '</a>'; ?></td>
-                                                    <td class="text-center align-middle"><?php echo '<a>' . $target_client . '</a>'; ?></td>
+                                                    <td class="text-center align-middle"><?php echo '<a>' . $nama_customer . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $submitDate . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $status . '</a>'; ?></td>
                                                 </tr>

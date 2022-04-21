@@ -29,7 +29,7 @@
         </div>
         <div class="d-flex justify-content-center">
             <div class="form-group mx-sm-3 mb-2">
-                <span class="badge badge-danger">New</span>
+                <span class="badge badge-danger">New</span>&nbsp;<span class="badge badge-info">Choose your style</span>
                 <select class="custom-select" id="myselection">
                     <option selected>Select UI</option>
                     <option value="Table">Table View</option>
@@ -57,28 +57,28 @@
                                 <table id="withButton" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th class="text-center align-middle">
-                                                Project ID
+                                            <th class="text-center align-middle" style="width: 12.5%;">
+                                                # ID
                                             </th>
-                                            <th class="text-center align-middle">
+                                            <th class="text-center align-middle" style="width: 12.5%;">
                                                 Customer
                                             </th>
-                                            <th class="text-center align-middle">
+                                            <th class="text-center align-middle" style="width: 12.5%;">
                                                 Proposal
                                             </th>
-                                            <th class="text-center align-middle">
+                                            <th class="text-center align-middle" style="width: 12.5%;">
                                                 Presentation
                                             </th>
-                                            <th class="text-center align-middle">
+                                            <th class="text-center align-middle" style="width: 12.5%;">
                                                 Survey
                                             </th>
-                                            <th class="text-center align-middle">
+                                            <th class="text-center align-middle" style="width: 12.5%;">
                                                 Report
                                             </th>
-                                            <th class="text-center align-middle">
+                                            <th class="text-center align-middle" style="width: 12.5%;">
                                                 Quotation
                                             </th>
-                                            <th class="text-center align-middle">
+                                            <th class="text-center align-middle" style="width: 12.5%;">
                                                 PO
                                             </th>
                                         </tr>
@@ -86,21 +86,21 @@
                                     <tbody>
                                         <?php
                                         $sql = "SELECT A.*, B.* FROM `activity_tracker` A 
-                                        INNER JOIN `proposal` B 
-                                        USING (id_proposal)";
+                                        INNER JOIN `client` B 
+                                        USING (id_client);";
                                         $connecting = mysqli_query($conn, $sql);
                                         if ($connecting) {
                                             while ($rowAct = $connecting->fetch_assoc()) {
                                         ?>
                                                 <tr>
-                                                    <td class="text-center align-middle"><?php echo $rowAct['id_activity'] ?></td>
-                                                    <td class="text-center align-middle"><?php echo $rowAct['target_client'] ?></td>
-                                                    <td class="text-center align-middle"><?php echo $rowAct['id_proposal'] ?></td>
-                                                    <td class="text-center align-middle"><?php echo $rowAct['id_presentation'] ?></td>
-                                                    <td class="text-center align-middle"><?php echo $rowAct['id_survey'] ?></td>
-                                                    <td class="text-center align-middle"><?php echo $rowAct['id_report'] ?></td>
-                                                    <td class="text-center align-middle"><?php echo $rowAct['id_quotation'] ?></td>
-                                                    <td class="text-center align-middle"><?php echo $rowAct['po_number'] ?></td>
+                                                    <td class="text-center align-middle">WISE-<?php echo $rowAct['id_activity'] ?></td>
+                                                    <td class="text-center align-middle"><?php echo $rowAct['nama_customer']; ?></td>
+                                                    <td class="text-center align-middle"><?php echo $rowAct['proposal_submit'] ?></td>
+                                                    <td class="text-center align-middle"><?php echo $rowAct['presentation_submit'] ?></td>
+                                                    <td class="text-center align-middle"><?php echo $rowAct['survey_submit'] ?></td>
+                                                    <td class="text-center align-middle"><?php echo $rowAct['report_submit'] ?></td>
+                                                    <td class="text-center align-middle"><?php echo $rowAct['quotation_submit'] ?></td>
+                                                    <td class="text-center align-middle"><?php echo $rowAct['po_submit'] ?></td>
                                                 </tr>
                                         <?php
                                             }
@@ -126,12 +126,12 @@
                         $status                 = $rowDataTracker['status'];
 
                         // Select Pre Customer Name
-                        $selectPreCustomer = $conn->query("SELECT A.id_activity, B.target_client, B.proposal_status FROM `activity_tracker` A
-                        INNER JOIN proposal B
-                        USING (proposal_title)
+                        $selectPreCustomer = $conn->query("SELECT A.id_activity, B.nama_customer FROM `activity_tracker` A
+                        INNER JOIN client B
+                        USING (id_client)
                         WHERE id_activity = '" . $id_activity . "';");
                         $rowCustomerTarget = mysqli_fetch_array($selectPreCustomer);
-                        $customer_target = $rowCustomerTarget['target_client'];
+                        $customer_target = $rowCustomerTarget['nama_customer'];
                     ?>
                         <!-- UI for showing list -->
                         <div class="card card-primary card-outline">

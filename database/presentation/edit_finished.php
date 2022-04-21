@@ -3,7 +3,6 @@ require_once '../configures/koneksi.php';
 
 $id_presentation = $_GET['id'];
 $id_url = mysqli_real_escape_string($conn, $id_presentation);
-$month = date("m");
 
 if (isset($_POST['btnFinishedPresent'])) {
 

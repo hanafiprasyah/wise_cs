@@ -8,9 +8,13 @@ if (isset($_POST['btnAddPresentation'])) {
     $second = date("s");
     $millisecond = round(microtime(true) * 1000);
 
+
+    $entry_by = $_GET['entry_by'];
+    $id_url = mysqli_real_escape_string($conn, $entry_by);
+
     $presentator        = $_POST['id_presentation'];
     $newPresentator     = str_replace(" ", "", $presentator);
-    $id_presentation    = '' . $year . '' . $month . '' . $newPresentator . '' . $second . '' . $millisecond;
+    $id_presentation    = '' . $year . '' . $month . '' . $newPresentator . '' . $id_url . '' . $second . '' . $millisecond;
 
     $id_proposal            = $_POST['id_proposal'];
     $client_name            = $_POST['client_name'];
@@ -29,8 +33,7 @@ if (isset($_POST['btnAddPresentation'])) {
             `id_presentation`, 
             `id_proposal`,
             `presentation_name`,
-            `presentator`, 
-            `client_name`, 
+            `presentator`,  
             `presentation_date`,
             `presentation_status`
             ) VALUES (
@@ -38,7 +41,6 @@ if (isset($_POST['btnAddPresentation'])) {
                 '" . $id_proposal . "',
                 '" . $presentation_name . "',
                 '" . $presentator . "',
-                '" . $client_name . "',
                 '" . $presentation_date . "',
                 '" . $status . "'
             );");

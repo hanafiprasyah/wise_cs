@@ -47,7 +47,7 @@
                             <div class="card-body">
                                 <div class="tab-content">
                                     <div class="active tab-pane" id="settings">
-                                        <form class="form-horizontal" action="../../database/presentation/add_presentation.php" method="POST">
+                                        <form class="form-horizontal" action="../../database/presentation/add_presentation.php?entry_by=<?php echo $row['username']; ?>" method="POST">
                                             <div class="form-group row">
                                                 <label for="id_proposal" class="col-sm-4 col-form-label">Proposal</label>
                                                 <div class="col-sm-8">
@@ -58,19 +58,18 @@
                                                         $connectData = mysqli_query($conn, $getID);
                                                         while ($row_proposal = mysqli_fetch_array($connectData)) {
                                                         ?>
-                                                            <option value="<?php echo $row_proposal['id_proposal']; ?>" <?php if ($row_proposal['proposal_title'] == $row_proposal['id_proposal']) echo 'selected="selected"'; ?>><?php echo $row_proposal['target_client'];
-                                                                                                                                                                                                                                    echo ' - ' . $row_proposal['proposal_title']; ?></option>
+                                                            <option value="<?php echo $row_proposal['id_proposal']; ?>" <?php if ($row_proposal['proposal_title'] == $row_proposal['id_proposal']) echo 'selected="selected"'; ?>><?php echo $row_proposal['proposal_title']; ?></option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
+                                            <!-- <div class="form-group row">
                                                 <label for="client_name" class="col-sm-4 col-form-label">Customer</label>
                                                 <div class="col-sm-6">
                                                     <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Who is your customer?" required>
                                                     <span style="color: BLUE;">Example : PT. WIBAWA SOLUSI ELEKTRIK</span>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="form-group row">
                                                 <label for="presentation_name" class="col-sm-4 col-form-label">Presentation Title</label>
                                                 <div class="col-sm-6">
@@ -156,9 +155,6 @@
                                                 Presentator
                                             </th>
                                             <th class="text-center align-middle">
-                                                Customer
-                                            </th>
-                                            <th class="text-center align-middle">
                                                 Presentation Date
                                             </th>
                                             <th class="text-center align-middle">
@@ -180,19 +176,16 @@
                                                 $presentator = $rowPresentation['presentator'];
                                                 $presentation_name = $rowPresentation['presentation_name'];
                                                 $id_proposal = $rowPresentation['id_proposal'];
-                                                $client_name = $rowPresentation['client_name'];
                                                 $title = $rowPresentation['proposal_title'];
-                                                $target_client = $rowPresentation['target_client'];
                                                 $date = $rowPresentation['presentation_date'];
                                                 $status = $rowPresentation['presentation_status'];
 
                                                 $presentationDate = date("F d, Y", strtotime($date));
                                         ?>
                                                 <tr>
-                                                    <td class="text-center align-middle"><?php echo '<a>' . $target_client . ' - ' . $title . '</a>'; ?></td>
+                                                    <td class="text-center align-middle"><?php echo '<a>' . $title . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $presentation_name . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $presentator . '</a>'; ?></td>
-                                                    <td class="text-center align-middle"><?php echo '<a>' . $client_name . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $presentationDate . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $status . '</a>'; ?></td>
                                                 </tr>
@@ -232,9 +225,6 @@
                                                 Presentator
                                             </th>
                                             <th class="text-center align-middle">
-                                                Customer
-                                            </th>
-                                            <th class="text-center align-middle">
                                                 Presentation Date
                                             </th>
                                             <th class="text-center align-middle">
@@ -257,19 +247,16 @@
                                                 $presentator = $rowPresentation['presentator'];
                                                 $id_presentation = $rowPresentation['id_presentation'];
                                                 $id_proposal = $rowPresentation['id_proposal'];
-                                                $client_name = $rowPresentation['client_name'];
                                                 $title = $rowPresentation['proposal_title'];
-                                                $target_client = $rowPresentation['target_client'];
                                                 $date = $rowPresentation['presentation_date'];
                                                 $status = $rowPresentation['presentation_status'];
 
                                                 $presentationDate = date("F d, Y", strtotime($date));
                                         ?>
                                                 <tr>
-                                                    <td class="text-center align-middle"><?php echo '<a>' . $target_client . ' - ' . $title . '</a>'; ?></td>
+                                                    <td class="text-center align-middle"><?php echo '<a>' . $title . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $presentation_name . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $presentator . '</a>'; ?></td>
-                                                    <td class="text-center align-middle"><?php echo '<a>' . $client_name . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $presentationDate . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '<a>' . $status . '</a>'; ?></td>
                                                     <td class="text-center align-middle"><?php echo '

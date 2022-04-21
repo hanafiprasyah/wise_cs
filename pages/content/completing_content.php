@@ -2,7 +2,8 @@
   <div class="card-body">
     <form class="form-horizontal" action="../../database/configures/completing_data.php" method="POST">
       <br>
-      <h4>Please Complete your account</h4>
+      <h4 class="text-center">Please Complete your account</h4>
+      <br>
       <div class="form-group row">
         <label for="email">Email</label>
         <input type="hidden" class="form-control" id="id_user" name="id_user" value="<?php echo $row['id_user']; ?>" required>
