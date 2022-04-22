@@ -226,3 +226,27 @@ if ($row['level'] == 'Direksi' || $row['level'] == 'Administrator') {
 <?php
 }
 ?>
+<!-- Relation Menus -->
+<li class="<?php echo $id_url != 901001 && $id_url != 901002 ? 'nav-item menu-close' : 'nav-item menu-open' ?>">
+    <a href="#" class="<?php echo $id_url != 901001 && $id_url != 901002 ? 'nav-link' : 'nav-link active' ?>">
+        <i class="fas fa-project-diagram"></i>
+        <p>
+            &nbsp Relations
+            <i class="fas fa-angle-left right"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="../screen/our_relation.php?id=901001" class="<?php echo $id_url == 901001 ? 'nav-link active' : 'nav-link' ?>">
+                <i class="fa fa-angle-right nav-icon"></i>
+                <p>Our Relations</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="../screen/add_relation.php?id=901002" class="<?php echo $id_url == 901002 ? 'nav-link active' : 'nav-link' ?>">
+                <i class="fa fa-angle-right nav-icon"></i>
+                <p>Add Relation</p>
+            </a>
+        </li>
+    </ul>
+</li>
