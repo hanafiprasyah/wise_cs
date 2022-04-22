@@ -8,8 +8,11 @@ if (isset($_POST['btnAddQuotation'])) {
     $second = date("s");
     $millisecond = round(microtime(true) * 1000);
 
-    $quotation_ticket       = $_POST['id_quotation'];
-    $id_quotation           = '' . $year . '' . $month . '' . $quotation_ticket . '' . $second . '' . $millisecond;
+    $entry_by = $_GET['entry_by'];
+    $id_url = mysqli_real_escape_string($conn, $entry_by);
+
+    // $quotation_ticket       = $_POST['id_quotation'];
+    $id_quotation           = '' . $year . '' . $month . '' . $id_url . '' . $second . '' . $millisecond;
 
     $id_user            = $_POST['id_user'];
     $id_report          = $_POST['id_report'];
