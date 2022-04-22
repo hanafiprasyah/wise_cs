@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-12">
                 <!-- Default box -->
-                <div class="card" id="printableArea">
+                <div class="card shadow rounded" id="printableArea">
                     <!-- <div class="card-header">
                 <h3 class="card-title">Projects Detail</h3>
 
@@ -39,7 +39,7 @@
                             <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
                                 <div class="row">
                                     <div class="col-12 col-sm-4">
-                                        <div class="info-box bg-light">
+                                        <div class="info-box bg-light shadow rounded">
                                             <div class="info-box-content">
                                                 <span class="info-box-text text-center text-info">Installation Date</span>
                                                 <?php
@@ -55,7 +55,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-4">
-                                        <div class="info-box bg-light">
+                                        <div class="info-box bg-light shadow rounded">
                                             <div class="info-box-content">
                                                 <span class="info-box-text text-center text-success">Scheduled Visit</span>
                                                 <span class="info-box-number text-center text-muted mb-0"><?php echo date("F d, Y") == $visitDate ? '<a style="color:black;">Today</a>' : '<a>' . $visitDate . '</a>'; ?></span>
@@ -63,7 +63,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-4">
-                                        <div class="info-box bg-light">
+                                        <div class="info-box bg-light shadow rounded">
                                             <div class="info-box-content">
                                                 <span class="info-box-text text-center text-danger">Expired Guarantee</span>
                                                 <span class="info-box-number text-center text-muted mb-0"><?php echo $expDate; ?></span>

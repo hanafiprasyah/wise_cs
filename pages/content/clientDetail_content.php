@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
-            <div class="row mb-2">
+            <div class="row mb-3">
                 <div class="col-sm-6">
                     <h1>Customer Detail</h1>
                 </div>
@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col-md-12">
                 <!-- Default box -->
-                <div class="card" id="printableArea">
+                <div class="card shadow rounded" id="printableArea">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">

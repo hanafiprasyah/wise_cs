@@ -25,10 +25,10 @@
         ?>
       </div>
       <div class="col-md-12">
-        <div class="row">
+        <div class="row mb-4">
           <!-- TRACKER -->
           <div class="col-lg-3 col-6">
-            <div class="small-box bg-info">
+            <div class="small-box bg-info shadow rounded">
               <div class="inner">
                 <?php
                 $sql_count = "SELECT * FROM activity_tracker WHERE status='On Progress';";
@@ -49,7 +49,7 @@
           <!-- ./col -->
           <!-- MAINTENANCE REQUEST -->
           <div class="col-lg-3 col-6">
-            <div class="small-box bg-success">
+            <div class="small-box bg-success shadow rounded">
               <div class="inner">
                 <!-- <h3>53<sup style="font-size: 20px">%</sup></h3> -->
                 <?php
@@ -71,7 +71,7 @@
           <!-- SCHEDULED VISIT -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-warning shadow rounded">
               <div class="inner">
                 <?php
                 //getDefaultDate(ASIA/BANGKOK)
@@ -102,7 +102,7 @@
           <!-- EXPIRED GUARANTEE -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <div class="small-box bg-danger shadow rounded">
               <div class="inner">
                 <?php
                 //getDefaultDate(ASIA/BANGKOK)
@@ -136,7 +136,7 @@
       <div class="row">
         <!-- QUOTES -->
         <div class="col-md-6">
-          <div class="card">
+          <div class="card shadow rounded">
             <div class="card-header">
               <h3 class="card-title">
                 <i class="fas fa-quote-right"></i>
@@ -182,7 +182,7 @@
         </div>
         <!-- ACTIVITY -->
         <div class="col-md-6">
-          <div class="card">
+          <div class="card shadow rounded">
             <div class="card-header">
               <h3 class="card-title">
                 <i class="fas fa-tasks"></i>

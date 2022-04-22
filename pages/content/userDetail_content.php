@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <!-- Profile Image -->
-                    <div class="card card-primary card-outline">
+                    <div class="card card-primary card-outline shadow rounded">
                         <div class="card-body box-profile">
                             <div class="text-center">
                                 <?php echo
@@ -46,7 +46,7 @@
 
                 <div class="col-md-9">
                     <!-- About Me Box -->
-                    <div class="card card-primary">
+                    <div class="card card-primary shadow rounded">
                         <div class="card-header">
                             <h3 class="card-title">About Me</h3>
                         </div>

@@ -20,8 +20,8 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
+                <div class="col-md-12 mb-4">
+                    <div class="card shadow rounded">
                         <div class="card-body">
                             <?php if (isset($_GET['error'])) { ?>
                                 <p><?php echo $_GET['error']; ?></p>
@@ -48,7 +48,7 @@
                                         <div class="form-group row">
                                             <label for="alamat_customer" class="col-sm-4 col-form-label">Customer Address</label>
                                             <div class="col-sm-6">
-                                                <textarea id="alamat_customer" class="form-control" name="alamat_customer" placeholder="Where is your customer address?" class="md-textarea form-control" rows="3" required><?php echo $rowDataClient['alamat_customer']; ?></textarea>
+                                                <textarea id="alamat_customer" class="form-control" name="alamat_customer" placeholder="Where is your customer address?" class="md-textarea form-control" rows="3"><?php echo $rowDataClient['alamat_customer']; ?></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group row">

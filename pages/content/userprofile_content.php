@@ -22,7 +22,7 @@
       <div class="row">
         <div class="col-md-3">
           <!-- Profile Image -->
-          <div class="card card-primary card-outline">
+          <div class="card card-primary card-outline shadow rounded">
             <div class="card-body box-profile">
               <div class="text-center">
                 <?php echo
@@ -43,7 +43,7 @@
           <!-- /.card -->
 
           <!-- About Me Box -->
-          <div class="card card-primary">
+          <div class="card card-primary shadow rounded">
             <div class="card-header">
               <h3 class="card-title">About Me</h3>
             </div>
@@ -73,7 +73,7 @@
         <!-- /.col -->
 
         <div class="col-md-9">
-          <div class="card">
+          <div class="card shadow rounded">
             <div class="card-header p-2">
               <ul class="nav nav-pills">
                 <li class="nav-item"><a class="nav-link active" data-toggle="tab">Update Profile</a></li>
@@ -182,7 +182,7 @@
                     <br>
                     <div class="form-group row">
                       <div class="offset-sm-2 col-sm-10">
-                        <button type="submit" name="btnUpdate" class="btn btn-danger">Save Data</button>
+                        <button type="submit" name="btnUpdate" class="btn btn-success">Save Data</button>
                       </div>
                     </div>
                   </form>

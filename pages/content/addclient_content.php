@@ -20,8 +20,8 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
+                <div class="col-md-12 mb-5">
+                    <div class="card shadow rounded">
                         <div class="card-body">
                             <?php if (isset($_GET['error'])) { ?>
                                 <div class="alert alert-danger" role="alert">
@@ -53,7 +53,8 @@
                                         <div class="form-group row">
                                             <label for="alamat_customer" class="col-sm-4 col-form-label">Customer Address</label>
                                             <div class="col-sm-6">
-                                                <input type="text" class="form-control" id="alamat_customer" name="alamat_customer" placeholder="Where is your customer address?">
+                                                <!-- <input type="text" class="form-control" id="alamat_customer" name="alamat_customer" placeholder="Where is your customer address?"> -->
+                                                <textarea class="form-control" id="alamat_customer" name="alamat_customer" placeholder="Where is your customer address?"></textarea>
                                                 <span style="color: BLUE;">Example : Jalan Jati Asih Raya Nomor 350, Jati Asih, Kota Bekasi</span>
                                             </div>
                                         </div>

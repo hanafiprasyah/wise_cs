@@ -20,8 +20,8 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
+                <div class="col-md-12 mb-4">
+                    <div class="card shadow rounded">
                         <div class="card-body">
                             <?php if (isset($_GET['error'])) { ?>
                                 <p><?php echo $_GET['error']; ?></p>
@@ -115,7 +115,8 @@
                                         <div class="form-group row">
                                             <label for="lokasi_pemasangan" class="col-sm-4 col-form-label">Installing location</label>
                                             <div class="col-sm-6">
-                                                <input type="text" class="form-control" id="lokasi_pemasangan" name="lokasi_pemasangan" placeholder="Where is it?" value="<?php echo $rowDatas['lokasi_pemasangan']; ?>" required>
+                                                <!-- <input type="text" class="form-control" id="lokasi_pemasangan" name="lokasi_pemasangan" placeholder="Where is it?" value="" required> -->
+                                                <textarea class="form-control" id="lokasi_pemasangan" name="lokasi_pemasangan" placeholder="Where is it?" required><?php echo $rowDatas['lokasi_pemasangan']; ?></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group row">

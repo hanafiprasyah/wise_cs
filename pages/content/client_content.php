@@ -19,8 +19,8 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
+                <div class="col-md-12 mb-4">
+                    <div class="card shadow rounded">
                         <div class="card-header border-transparent">
                             <h3 class="card-title">Customers Table</h3>
                             <div class="card-tools">
