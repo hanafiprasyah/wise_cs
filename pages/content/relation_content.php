@@ -67,7 +67,7 @@
                                                 <td class="text-center align-middle">
                                                     <?php echo '<a>' . $id_rel . '</a>'; ?></td>
                                                 <td class="text-center align-middle">
-                                                    <?php echo '<a href="../screen/relation_detail.php?id=' . $id_rel . '">' . $nama_rel . '</a>'; ?></td>
+                                                    <?php echo '<a>' . $nama_rel . '</a>'; ?></td>
                                                 <td class="text-center align-middle">
                                                     <?php echo '<a>' . $jenis_rel . '</a>'; ?></td>
                                                 <td class="text-center align-middle">
