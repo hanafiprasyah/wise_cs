@@ -63,6 +63,13 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
+                                                <label for="survey_pic" class="col-sm-4 col-form-label">Customer P.I.C.</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" id="survey_pic" name="survey_pic" placeholder="Who are the P.I.C.?" required>
+                                                    <span style="color: BLUE;">Example : IRWAN PRAYITNO</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
                                                 <label for="id_presentation" class="col-sm-4 col-form-label">Presentation Name</label>
                                                 <div class="col-sm-8">
                                                     <select name="id_presentation" id="id_presentation" class="form-control select2bs4" required>
@@ -75,13 +82,6 @@
                                                             <option value="<?php echo $rowPres['id_presentation']; ?>" <?php if ($rowPres['presentation_name'] == $rowPres['id_presentation']) echo 'selected="selected"'; ?>><?php echo $rowPres['presentation_name']; ?></option>
                                                         <?php } ?>
                                                     </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="survey_pic" class="col-sm-4 col-form-label">Survey P.I.C.</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control" id="survey_pic" name="survey_pic" placeholder="Who are the P.I.C.?" required>
-                                                    <span style="color: BLUE;">Example : IRWAN PRAYITNO</span>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
