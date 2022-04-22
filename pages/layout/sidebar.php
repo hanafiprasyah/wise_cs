@@ -9,7 +9,7 @@ $enc_key        = "wisecs";
 $enc_string1    = openssl_encrypt($origin1, $chiper, $enc_key, $opt, $enc_iv);
 ?>
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-light-primary elevation-4">
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
