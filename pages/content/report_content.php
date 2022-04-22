@@ -47,14 +47,14 @@
                             <div class="card-body">
                                 <div class="tab-content">
                                     <div class="active tab-pane" id="settings">
-                                        <form class="form-horizontal" action="../../database/report/add_report.php" method="POST">
-                                            <div class="form-group row">
+                                        <form class="form-horizontal" action="../../database/report/add_report.php?entry_by=<?php echo $row['username']; ?>" method="POST">
+                                            <!-- <div class="form-group row">
                                                 <label for="id_report" class="col-sm-4 col-form-label">Entry by</label>
                                                 <div class="col-sm-6">
                                                     <input type="text" class="form-control" id="id_report" name="id_report" placeholder="Fill with your SIMPLE NAME!" required>
                                                     <span style="color: BLUE;">Example : <a style="color: RED;">H</a>anafi (Using CAPITAL in the first row of your name)</span>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="form-group row">
                                                 <label for="id_survey" class="col-sm-4 col-form-label">Survey Activity</label>
                                                 <div class="col-sm-4">
@@ -87,7 +87,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="id_user" class="col-sm-4 col-form-label">Report Creator</label>
+                                                <label for="id_user" class="col-sm-4 col-form-label">Report Editor</label>
                                                 <div class="col-sm-4">
                                                     <select name="id_user" id="id_user" class="form-control select2bs4" required>
                                                         <option value="">Created by?</option>

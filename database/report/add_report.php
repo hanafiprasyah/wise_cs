@@ -8,9 +8,12 @@ if (isset($_POST['btnAddReport'])) {
     $second = date("s");
     $millisecond = round(microtime(true) * 1000);
 
-    $reporter           = $_POST['id_report'];
-    $newReporter        = str_replace(" ", "", $reporter);
-    $id_report          = '' . $year . '' . $month . '' . $newReporter . '' . $second . '' . $millisecond;
+    $entry_by = $_GET['entry_by'];
+    $id_url = mysqli_real_escape_string($conn, $entry_by);
+
+    // $reporter           = $_POST['id_report'];
+    // $newReporter        = str_replace(" ", "", $reporter);
+    $id_report          = '' . $year . '' . $month . '' . $id_url . '' . $second . '' . $millisecond;
 
     $id_survey         = $_POST['id_survey'];
     $report_title      = $_POST['report_title'];
