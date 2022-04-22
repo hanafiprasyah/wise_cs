@@ -47,7 +47,7 @@ if ($row['level'] != 'Teknisi') {
                             <div class="form-group row">
                                 <label for="id_quotation" class="col-sm-4 col-form-label">Quotation ID</label>
                                 <div class="col-sm-4">
-                                    <select name="id_quotation" id="id_quotation" class="form-control select2bs4" required>
+                                    <select name="id_quotation" id="id_quotation" class="form-control select2bs4">
                                         <option value="">Select Successful Quotation</option>
                                         <?php
                                         $getQuo = "SELECT * FROM quotation WHERE quotation_status='Success';";
