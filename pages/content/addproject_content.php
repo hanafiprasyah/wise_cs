@@ -47,7 +47,7 @@
                                                 <select name="id_client" id="id_client" class="form-control select2bs4" required>
                                                     <option value="">Select Customer</option>
                                                     <?php
-                                                    $getIDClient = "SELECT id_client, nama_customer FROM `client` ORDER BY nama_customer ASC;";
+                                                    $getIDClient = "SELECT id_client, nama_customer FROM `client` WHERE status_customer='Customer' ORDER BY nama_customer ASC;";
                                                     $connectDataIdClient = mysqli_query($conn, $getIDClient);
                                                     while ($row = mysqli_fetch_array($connectDataIdClient)) {
                                                     ?>
