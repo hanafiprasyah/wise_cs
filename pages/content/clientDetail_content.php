@@ -30,7 +30,7 @@
     ?>
     <!-- Main content -->
     <section class="content">
-        <div class="row">
+        <div class="row px-2">
             <div class="col-md-12">
                 <!-- Default box -->
                 <div class="card shadow rounded" id="printableArea">
@@ -39,7 +39,7 @@
                             <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
                                 <div class="row">
                                     <div class="col-12 col-sm-4">
-                                        <div class="info-box bg-light">
+                                        <div class="info-box bg-light shadow rounded">
                                             <div class="info-box-content">
                                                 <span class="info-box-text text-center text-muted">Customer Status</span>
                                                 <span class="info-box-number text-center text-muted mb-0"><i><?php echo $rowDataClient['status_customer']; ?></i></span>
@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-4">
-                                        <div class="info-box bg-light">
+                                        <div class="info-box bg-light shadow rounded">
                                             <div class="info-box-content">
                                                 <span class="info-box-text text-center text-success">Project(s)</span>
                                                 <span class="info-box-number text-center text-muted mb-0"><?php echo $rowTotPro['total_project']; ?></span>
@@ -55,7 +55,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-4">
-                                        <div class="info-box bg-light">
+                                        <div class="info-box bg-light shadow rounded">
                                             <div class="info-box-content">
                                                 <span class="info-box-text text-center text-info">Managed by</span>
                                                 <span class="info-box-number text-center text-muted mb-0"><?php echo $rowDataClient['jenis_customer'] ?></span>
@@ -63,7 +63,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row px-2">
                                     <div class="col-12">
                                         <br>
                                         <h4>Relation Project(s) :</h4>
@@ -80,11 +80,11 @@
                                                     <tbody>
                                                         <?php
                                                         $sql = "SELECT 
-                                                A.tgl_pemasangan, B.tipe_produk
-                                                FROM project A
-                                                INNER JOIN product B
-                                                USING (id_product)
-                                                WHERE id_client = '" . $id_url . "';";
+                                                                A.tgl_pemasangan, B.tipe_produk
+                                                                FROM project A
+                                                                INNER JOIN product B
+                                                                USING (id_product)
+                                                                WHERE id_client = '" . $id_url . "';";
                                                         $connectRelProject = mysqli_query($conn, $sql);
                                                         if ($connectRelProject) {
                                                             while ($rowRelPro = $connectRelProject->fetch_assoc()) {

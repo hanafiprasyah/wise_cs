@@ -19,7 +19,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row px-2">
                 <div class="col-md-12 mb-4">
                     <div class="card shadow rounded">
                         <div class="card-body">
@@ -35,7 +35,7 @@
                                                 <input type="text" class="form-control" id="id_client" name="id_client" placeholder="ID?" value="<?php echo $rowDataClient['id_client']; ?>" required>
                                             </div>
                                             <div class="col-sm-4">
-                                                <span class="info-box-text text-center align-middle text-danger">Warning! Please do not change this customer ID as much as possible!</span>
+                                                <span class="info-box-text text-center align-middle text-danger">Warning! <b>DO NOT CHANGE</b> this customer ID as much as possible!</span>
                                             </div>
                                         </div>
                                         <div class="form-group row">
