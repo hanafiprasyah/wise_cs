@@ -29,8 +29,8 @@
             <?php
             }
             ?>
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row px-2 py-2">
+                <div class="col-sm-12">
                     <div class="card shadow rounded">
                         <div class="card-header border-transparent">
                             <h3 class="card-title">Monitoring Table</h3>
@@ -68,8 +68,8 @@
                                 <tbody>
                                     <?php
                                     $sql = "SELECT A.*, B.username, B.nama_lengkap, B.level FROM `login_session` A
-                            INNER JOIN user B
-                            USING (id_user) ORDER BY A.login_date DESC;";
+                                    INNER JOIN user B
+                                    USING (id_user) ORDER BY A.login_date DESC;";
                                     $connectDS = mysqli_query($conn, $sql);
                                     if ($connectDS) {
                                         while ($rowDS = $connectDS->fetch_assoc()) {

@@ -10,14 +10,18 @@ if (empty($_SESSION['username'])) {
 }
 
 // require_once '../../database/configures/koneksi.php';
-$result = mysqli_query($conn, "SELECT * FROM user WHERE id_user='" . $_SESSION['id_user'] . "'");
-$row = mysqli_fetch_array($result);
+$result = mysqli_query($conn, "SELECT * FROM user WHERE login_status='Online' AND id_user='" . $_SESSION['id_user'] . "'");
+if ($result) {
+    $row = mysqli_fetch_array($result);
+}
 
 $id = $_GET['id'];
 $id_url = mysqli_real_escape_string($conn, $id);
 $month = date("m");
 $year  = date("Y");
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,9 +57,10 @@ $year  = date("Y");
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <!-- layout-fixed -->
+    <!-- ALL CONTENTS HERE -->
     <div class="wrapper">
-
-        <?php include("../layout/preloader/shake_preloader.php") ?>
+        <?php include("../layout/preloader/shake_preloader.php"); ?>
 
         <?php include("../layout/navbar.php"); ?>
 
@@ -64,16 +69,12 @@ $year  = date("Y");
         <?php include('../content/monitoring_content.php'); ?>
 
         <?php include('../layout/footer.php'); ?>
+
     </div>
     <!-- ./wrapper -->
 
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery Mapael -->
-    <script src="../../plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-    <script src="../../plugins/raphael/raphael.min.js"></script> -->
-    <script src="../../plugins/jquery-mapael/jquery.mapael.min.js"></script>
-    <script src="../../plugins/jquery-mapael/maps/usa_states.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="../../plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -103,9 +104,6 @@ $year  = date("Y");
     <script src="../../plugins/sweetalert2/sweetalert2.all.js"></script>
     <script src="../../plugins/sweetalert2/sweetalert2.all.min.js"></script>
     <script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <!-- Addons Scripts -->
     <script type="text/javascript">
         <?php include('../scripts/spesific/sign_out.js'); ?>
         <?php include('../scripts/spesific/print_function.js'); ?>
