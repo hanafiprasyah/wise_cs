@@ -231,7 +231,7 @@ if ($row['level'] == 'Direksi' || $row['level'] == 'Administrator') {
     <a href="#" class="<?php echo $id_url != 901001 && $id_url != 901002 ? 'nav-link' : 'nav-link active' ?>">
         <i class="fas fa-project-diagram"></i>
         <p>
-            &nbsp Relations
+            &nbsp;Relations&nbsp;<span class="badge badge-danger">New</span>
             <i class="fas fa-angle-left right"></i>
         </p>
     </a>
@@ -246,6 +246,30 @@ if ($row['level'] == 'Direksi' || $row['level'] == 'Administrator') {
             <a href="../screen/add_relation.php?id=901002" class="<?php echo $id_url == 901002 ? 'nav-link active' : 'nav-link' ?>">
                 <i class="fa fa-angle-right nav-icon"></i>
                 <p>Add Relation</p>
+            </a>
+        </li>
+    </ul>
+</li>
+<!-- Attachment Menus -->
+<li class="<?php echo $id_url != 9150101 && $id_url != 9150102 ? 'nav-item menu-close' : 'nav-item menu-open' ?>">
+    <a href="#" class="<?php echo $id_url != 9150101 && $id_url != 9150102 ? 'nav-link' : 'nav-link active' ?>">
+        <i class="fas fa-paperclip"></i>
+        <p>
+            &nbsp;Attachments&nbsp;<span class="badge badge-danger">New</span>
+            <i class="fas fa-angle-left right"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="../screen/attachments.php?id=9150101" class="<?php echo $id_url == 9150101 ? 'nav-link active' : 'nav-link' ?>">
+                <i class="fa fa-angle-right nav-icon"></i>
+                <p>Files</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="../screen/attachments.php?id=9150102" class="<?php echo $id_url == 9150102 ? 'nav-link active' : 'nav-link' ?>">
+                <i class="fa fa-angle-right nav-icon"></i>
+                <p>Upload</p>
             </a>
         </li>
     </ul>
