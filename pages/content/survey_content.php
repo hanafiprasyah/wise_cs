@@ -33,7 +33,7 @@
                     </div>
                     <!-- ADD NEW -->
                     <div class="col-md-12 collapse" id="collapseAddSurvey">
-                        <div class="card">
+                        <div class="card shadow-lg rounded mx-4">
                             <div class="card-header border-transparent">
                                 <!-- <h3 class="card-title">Add New Survey</h3>
                                 <div class="card-tools">
@@ -146,7 +146,7 @@
                 ?>
                     <!-- MONTHLY -->
                     <div class="col-md-12">
-                        <div class="card">
+                        <div class="card shadow rounded mx-1 my-2">
                             <div class="card-header border-transparent">
                                 <h3 class="card-title">Our <i style="color: RED;"><?php echo $monthName; ?></i> Survey</h3>
                                 <div class="card-tools">
@@ -229,7 +229,7 @@
                     </div>
                     <!-- ALL DATA -->
                     <div class="col-md-12">
-                        <div class="card">
+                        <div class="card shadow rounded mx-1 mt-2 mb-4">
                             <div class="card-header border-transparent">
                                 <h3 class="card-title">All Survey Data</h3>
                                 <div class="card-tools">
@@ -331,7 +331,7 @@
                 ?>
                     <!-- MONTHLY -->
                     <div class="col-md-12">
-                        <div class="card">
+                        <div class="card shadow rounded mx-1 my-2">
                             <div class="card-header border-transparent">
                                 <h3 class="card-title">Our <i style="color: RED;"><?php echo $monthName; ?></i> Survey
                                 </h3>
@@ -416,7 +416,7 @@
                     </div>
                     <!-- ALL DATA -->
                     <div class="col-md-12">
-                        <div class="card">
+                        <div class="card shadow rounded mx-1 mt-2 mb-4">
                             <div class="card-header border-transparent">
                                 <h3 class="card-title">All Survey Data</h3>
                                 <div class="card-tools">

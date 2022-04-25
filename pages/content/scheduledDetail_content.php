@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-12">
                 <!-- Less than 1 month box -->
-                <div class="card">
+                <div class="card shadow rounded mx-2 my-2">
                     <div class="card-header">
                         <h3 class="card-title" style="color: GREEN;">Less than 1 month</h3>
 
@@ -72,15 +72,15 @@
                                     // }
                                     // SQL for data
                                     $searchMsg = "SELECT
-                            P.*,
-                            T.tipe_produk,
-                            C.nama_customer
-                            FROM project P
-                            INNER JOIN client C
-                                USING (id_client)
-                            INNER JOIN product T
-                                USING (id_product) 
-                              WHERE visit_schedule BETWEEN (CURRENT_DATE+1) AND (CURRENT_DATE + INTERVAL 1 MONTH) AND visiting_status = 'Waiting for confirm';";
+                                                P.*,
+                                                T.tipe_produk,
+                                                C.nama_customer
+                                                FROM project P
+                                                INNER JOIN client C
+                                                    USING (id_client)
+                                                INNER JOIN product T
+                                                    USING (id_product) 
+                                                WHERE visit_schedule BETWEEN (CURRENT_DATE+1) AND (CURRENT_DATE + INTERVAL 1 MONTH) AND visiting_status = 'Waiting for confirm';";
                                     $connectionMsg = mysqli_query($conn, $searchMsg);
                                     if ($connectionMsg) {
                                         while ($rowMsg = $connectionMsg->fetch_assoc()) {
@@ -310,7 +310,7 @@
             </div>
             <div class="col-md-12">
                 <!-- More than 1 month box -->
-                <div class="card">
+                <div class="card shadow rounded mx-2 my-2">
                     <div class="card-header">
                         <h3 class="card-title" style="color: ORANGE;">More than 1 month</h3>
 
@@ -598,7 +598,7 @@
             </div>
             <div class="col-md-12">
                 <!-- Skipped Call -->
-                <div class="card">
+                <div class="card shadow rounded mx-2 mt-2 mb-4">
                     <div class="card-header">
                         <h3 class="card-title" style="color: RED;">Skipped Call</h3>
 

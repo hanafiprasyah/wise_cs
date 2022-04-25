@@ -18,9 +18,9 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row px-2">
                 <div class="col-md-12">
-                    <div class="card">
+                    <div class="card mb-4">
                         <div class="card-header border-transparent">
                             <h3 class="card-title">Maintenances Table</h3>
                             <div class="card-tools">
@@ -77,14 +77,13 @@
                                             $submit_date = $rowReq['req_date'];
                                             $status_req = $rowReq['status_req'];
                                             $tech_desc = $rowReq['tech_description'];
-                                            $suitDate = date("d F Y", strtotime($submit_date));
                                     ?>
                                             <tr>
                                                 <td class="text-center align-middle"><?php echo '<a href="../screen/mainReq_detail.php?id=' . $tiket_request . '">#WISE-' . $tiket_request . '</a>'; ?></td>
                                                 <td class="text-center align-middle"><?php echo '<a href="../screen/project_maintenance.php?id=' . $sn . '">' . $sn . '</a>'; ?></td>
                                                 <td class="text-center align-middle"><?php echo '<a>' . $reported_by . '</a>'; ?></td>
                                                 <td class="text-center align-middle"><?php echo '<a>' . $technician . '</a>'; ?></td>
-                                                <td class="text-center align-middle"><?php echo '<a>' . $suitDate . '</a>'; ?></td>
+                                                <td class="text-center align-middle"><?php echo '<a>' . $submit_date . '</a>'; ?></td>
                                                 <td class="text-center align-middle"><?php echo '<a>' . $tech_desc . '</a>'; ?></td>
                                                 <td class="text-center align-middle"><?php echo '<a>' . $status_req . '</a>'; ?></td>
                                             </tr>

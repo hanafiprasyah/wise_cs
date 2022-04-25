@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card">
+                    <div class="card shadow rounded mx-2 my-2">
                         <div class="card-header border-transparent">
                             <h3 class="card-title">Quotes Table</h3>
                             <div class="card-tools">

@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 mb-4">
-                    <div class="card shadow rounded">
+                    <div class="card shadow rounded mx-2 my-2">
                         <div class="card-header border-transparent">
                             <h3 class="card-title">Relations Table</h3>
                             <div class="card-tools">

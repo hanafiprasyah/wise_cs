@@ -18,7 +18,7 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="row">
+        <div class="row px-3">
             <div class="col-md-12">
                 <!-- Default box -->
                 <div class="card shadow rounded" id="printableArea">
@@ -71,7 +71,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row" style="display: flex;">
+                                <div class="row mt-4" style="display: flex;">
                                     <div class="col-12">
                                         <h4>About this installation :</h4>
                                         <br />
@@ -86,9 +86,6 @@
                                                                     echo '&nbsp';
                                                                     echo $rowDatas['satuan'] == NULL ? '' : $rowDatas['satuan']; ?></b>
                                             </p>
-                                            <p class="text-sm">Install Location
-                                                <b class="d-block"><?php echo $rowDatas['lokasi_pemasangan'] == NULL ? '-' : $rowDatas['lokasi_pemasangan']; ?></b>
-                                            </p>
                                         </div>
                                     </div>
                                     <div class="column" style="flex: 50%;">
@@ -100,6 +97,13 @@
                                                 <b class="d-block"><?php echo $rowDatas['visiting_status'] == NULL ? '-' : $rowDatas['visiting_status']; ?></b>
                                             </p>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row px-4 mt-4" style="display: flex;">
+                                    <div class="text-muted" style="text-align: center;">
+                                        <p class="text-sm">Install Location
+                                            <b class="d-block"><?php echo $rowDatas['lokasi_pemasangan'] == NULL ? '-' : $rowDatas['lokasi_pemasangan']; ?></b>
+                                        </p>
                                     </div>
                                 </div>
                             </div>

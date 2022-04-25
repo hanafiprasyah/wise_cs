@@ -31,7 +31,7 @@ $po = mysqli_real_escape_string($conn, $id_po);
             <div class="row">
                 <!-- ALL DATA -->
                 <div class="col-md-12">
-                    <div class="card">
+                    <div class="card shadow rounded mx-2 my-2">
                         <div class="card-header border-transparent">
                             <h3 class="card-title">Data Table</h3>
                             <div class="card-tools">
@@ -186,7 +186,7 @@ $po = mysqli_real_escape_string($conn, $id_po);
             <div class="row">
                 <div class="col-12" id="accordion">
                     <!-- UI for showing list -->
-                    <div class="card card-primary card-outline">
+                    <div class="card card-primary card-outline mx-2 my-2 shadow rounded">
                         <a class="d-block w-100" data-toggle="collapse" href="#row<?php echo $po; ?>">
                             <div class="card-header">
                                 <h4 class="card-title w-100">

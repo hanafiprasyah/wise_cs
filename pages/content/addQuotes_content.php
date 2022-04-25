@@ -19,9 +19,9 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
+            <div class="row px-2">
+                <div class="col-md-12 mb-5">
+                    <div class="card shadow rounded">
                         <div class="card-body">
                             <?php if (isset($_GET['error'])) { ?>
                                 <p><?php echo $_GET['error']; ?></p>
@@ -30,9 +30,9 @@
                                 <div class="active tab-pane" id="settings">
                                     <form class="form-horizontal" action="../../database/quotes/add_quotes.php?id=<?php echo $row['id_user']; ?>" method="POST">
                                         <div class="form-group row">
-                                            <label for="quotes_text" class="col-sm-4 col-form-label">Quotes</label>
+                                            <label for="quotes_text" class="col-sm-4 col-form-label text-right">Quotes</label>
                                             <div class="col-sm-6">
-                                                <input type="text" class="form-control" id="quotes_text" name="quotes_text" placeholder="What is in your mind?" required>
+                                                <textarea class="form-control" id="quotes_text" name="quotes_text" placeholder="What is in your mind?" required></textarea>
                                             </div>
                                         </div>
                                         <br>

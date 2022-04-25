@@ -20,7 +20,7 @@
         <div class="row">
             <!-- < 1 Month Running Out Warranty -->
             <div class="col-md-12">
-                <div class="card">
+                <div class="card shadow rounded mx-2 my-2">
                     <div class="card-header">
                         <h3 class="card-title" style="color: GREEN;">
                             Less than 1 month</h3>
@@ -239,7 +239,7 @@
             </div>
             <!-- Exp Warranty -->
             <div class="col-md-12">
-                <div class="card">
+                <div class="card shadow rounded mx-2 mt-2 mb-4">
                     <div class="card-header">
                         <h3 class="card-title" style="color: ORANGE;">Expired Warranty</h3>
                         <div class="card-tools">

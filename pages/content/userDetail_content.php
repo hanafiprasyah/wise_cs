@@ -19,8 +19,8 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3">
+            <div class="row px-2">
+                <div class="col-md-12">
                     <!-- Profile Image -->
                     <div class="card card-primary card-outline shadow rounded">
                         <div class="card-body box-profile">
@@ -44,14 +44,14 @@
                 </div>
                 <!-- /.col -->
 
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <!-- About Me Box -->
                     <div class="card card-primary shadow rounded">
                         <div class="card-header">
                             <h3 class="card-title">About Me</h3>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body">
+                        <div class="card-body text-center">
 
                             <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
 

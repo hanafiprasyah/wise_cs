@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 mb-5">
-                    <div class="card shadow rounded">
+                    <div class="card shadow rounded mx-2 my-2">
                         <div class="card-body">
                             <?php if (isset($_GET['error'])) { ?>
                                 <p><?php echo $_GET['error']; ?></p>

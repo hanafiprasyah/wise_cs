@@ -18,17 +18,17 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="row">
-            <div class="col-12 mt-3 text-center">
+        <!-- <div class="row">
+            <div class="col-12 mt-2 text-center">
                 <p class="lead" style="padding-left: 10%; padding-right: 10%;">
                     <b>Activity Tracker</b>
                     is one of the <i>WISE CS feature</i> that can be your assistant
                     to give you all of informations about your last sales activities.<br />
                 </p><br>
             </div>
-        </div>
+        </div> -->
         <div class="d-flex justify-content-center">
-            <div class="form-group mx-sm-3 mb-2">
+            <div class="form-group mx-sm-3 mb-4">
                 <span class="badge badge-danger">New</span>&nbsp;<span class="badge badge-info">Choose your style</span>
                 <select class="custom-select" id="myselection">
                     <option selected>Select UI</option>
@@ -37,13 +37,12 @@
                 </select>
             </div>
         </div>
-        <br>
         <!-- Table UI -->
         <div id="showTable" class="myDiv">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card">
+                        <div class="card shadow rounded mx-2 my-2">
                             <div class="card-header border-transparent">
                                 <h3 class="card-title">Sales Activity Table</h3>
                                 <div class="card-tools">
@@ -117,7 +116,7 @@
         </div>
         <!-- Timeline UI -->
         <div id="showTimeline" class="myDiv">
-            <div class="row">
+            <div class="row mx-2">
                 <div class="col-12" id="accordion">
                     <?php
                     $selectDataTracker = $conn->query("SELECT id_activity, status FROM activity_tracker;");
