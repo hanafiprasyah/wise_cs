@@ -8,7 +8,7 @@
         <div class="form-group">
             <label for="username">Username</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Enter your username" name="username" id="username">
+                <input type="text" class="form-control" autocomplete="off" name="username" id="username">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-user"></span>
@@ -19,7 +19,7 @@
         <div class="form-group">
             <label for="password">Password</label>
             <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Enter your password" name="password" id="password">
+                <input type="password" class="form-control" name="password" id="password">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-lock"></span>

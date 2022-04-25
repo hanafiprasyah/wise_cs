@@ -41,8 +41,8 @@ if (isset($_SESSION['username'])) {
       <a><b>WISE C.S. </b> Portal</a>
     </div>
     <!-- /.login-logo -->
-    <div class="card">
-      <div class="card-body login-card-body">
+    <div class="card shadow-lg rounded">
+      <div class="card-body login-card-body rounded">
         <?php include('../content/login_content.php'); ?>
         <br>
       </div>
@@ -79,7 +79,6 @@ if (isset($_SESSION['username'])) {
   <!-- Addons Scripts -->
   <script type="text/javascript">
     <?php include('../scripts/spesific/avoid_copcut.js'); ?>
-    <?php include('../scripts/spesific/show_hide.js'); ?>
     <?php include('../scripts/spesific/validator_login.js'); ?>
   </script>
 </body>
